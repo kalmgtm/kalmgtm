@@ -338,7 +338,7 @@
       font-family: var(--mono);
       font-size: 10px;
       letter-spacing: 0.08em;
-      color: var(--muted);
+      color: var(--light);
       display: flex;
       align-items: flex-start;
       gap: 10px;
@@ -928,16 +928,16 @@
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/laurenlaftsidis/" target="_blank">LinkedIn</a>
       <a href="https://substack.com/@kalmgtm" target="_blank">Substack</a>
-      <a href="mailto:lauren@kalmgtm.com">Email</a>
+      <a href="/cdn-cgi/l/email-protection#7519140007101b351e1419181201185b161a18">Email</a>
     </div>
   </footer>
  
   <!-- MOBILE STICKY CTA -->
   <div class="mobile-sticky">
-    <a href="#contact">Book a 30-min Call</a>
+    <a href="https://calendly.com/lauren-kalmgtm/30min" target="_blank">Book a 30-min Call</a>
   </div>
  
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
@@ -964,15 +964,41 @@
       });
     });
  
-    // Form submit: replace with Formspree or your own endpoint when ready
+    // Form submit
     function handleSubmit(e) {
       e.preventDefault();
       const btn = document.querySelector('.form-submit');
+      const form = document.querySelector('.contact-form');
+      const name = form.querySelector('input[type="text"]').value;
+      const email = form.querySelector('input[type="email"]').value;
+      const message = form.querySelector('textarea').value;
+ 
+      if (!name || !email || !message) return;
+ 
       btn.style.opacity = '0.5';
       btn.disabled = true;
-      setTimeout(() => {
-        document.getElementById('form-success').style.display = 'block';
-        btn.style.display = 'none';
-      }, 600);
+ 
+      fetch('https://formspree.io/f/mvzvdkqo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      })
+      .then(res => {
+        if (res.ok) {
+          document.getElementById('form-success').style.display = 'block';
+          btn.style.display = 'none';
+        } else {
+          btn.style.opacity = '1';
+          btn.disabled = false;
+          alert('Something went wrong. Try emailing lauren@kalmgtm.com directly.');
+        }
+      })
+      .catch(() => {
+        btn.style.opacity = '1';
+        btn.disabled = false;
+        alert('Something went wrong. Try emailing lauren@kalmgtm.com directly.');
+      });
     }
   </script>
+</body>
+</html>
