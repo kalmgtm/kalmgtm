@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kalm GTM — Staffing Agencies</title>
+  <title>Kalm GTM — Outbound for Staffing Agencies</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -22,6 +22,8 @@
       --white:   #f0ede6;
       --accent:  #c9a96e;
       --accent2: #7eb8a0;
+      --red:     #c96e6e;
+      --glow:    rgba(201,169,110,0.06);
       --serif:   'Cormorant Garamond', Georgia, serif;
       --mono:    'DM Mono', 'Courier New', monospace;
       --sans:    'Instrument Sans', sans-serif;
@@ -94,8 +96,9 @@
     }
     .nav-cta:hover { background: var(--white); }
 
+    /* HERO */
     .page-hero {
-      min-height: 70vh;
+      min-height: 85vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -148,21 +151,209 @@
       transition: background 0.2s;
     }
     .btn-primary:hover { background: var(--white); }
-
-    .stub-notice {
-      padding: 80px 48px;
-      border-top: 1px solid var(--border);
-      background: var(--bg2);
-    }
-    .stub-notice-inner {
-      max-width: 720px;
+    .btn-secondary {
       font-family: var(--mono);
-      font-size: 12px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 13px 32px;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--mid); color: var(--white); }
+
+    /* SECTIONS */
+    section { padding: 100px 48px; }
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px; height: 1px;
+      background: var(--accent);
+    }
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .section-heading em { font-style: italic; color: var(--accent); }
+    .section-body { font-size: 16px; color: var(--mid); max-width: 520px; line-height: 1.75; }
+
+    /* SITUATIONS */
+    .situations {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .situations-inner { max-width: 1100px; margin: 0 auto; }
+    .situations-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 72px;
+    }
+    .situation-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .situation-card {
+      background: var(--surface);
+      padding: 40px 32px;
+      border-top: 2px solid var(--border);
+      transition: background 0.2s;
+    }
+    .situation-card:hover { background: #1c1c1a; }
+    .situation-card-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
       color: var(--muted);
-      letter-spacing: 0.05em;
-      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .situation-card-title {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .situation-card-desc {
+      font-size: 13px;
+      color: var(--mid);
+      line-height: 1.7;
     }
 
+    /* PROBLEM */
+    .problem {
+      border-bottom: 1px solid var(--border);
+    }
+    .problem-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .problem-text {
+      font-size: 16px;
+      color: var(--mid);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .problem-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .problem-list li {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--light);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.6;
+    }
+    .problem-list li::before {
+      content: '/';
+      color: var(--accent);
+      flex-shrink: 0;
+      opacity: 0.5;
+    }
+
+    /* PILOT */
+    .pilot {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .pilot-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .pilot-price {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+    .pilot-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .pilot-steps li {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+    .pilot-steps li strong {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+
+    /* CTA */
+    .cta-strip { text-align: center; padding: 120px 48px; position: relative; overflow: hidden; }
+    .cta-strip::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 800px; height: 400px;
+      background: radial-gradient(ellipse, var(--glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-strip .section-label { justify-content: center; }
+    .cta-strip .section-label::before { display: none; }
+    .cta-headline {
+      font-family: var(--serif);
+      font-size: clamp(42px, 5.5vw, 72px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 24px;
+    }
+    .cta-headline em { font-style: italic; color: var(--accent); }
+    .cta-sub {
+      font-size: 15px;
+      color: var(--mid);
+      max-width: 480px;
+      margin: 0 auto 48px;
+      line-height: 1.75;
+    }
+    .cta-actions { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+    /* FOOTER */
     footer { border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; }
     .footer-logo { font-family: var(--serif); font-size: 22px; font-weight: 300; color: var(--muted); letter-spacing: 0.06em; }
     .footer-logo span { color: var(--accent); }
@@ -171,12 +362,45 @@
     .footer-links a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--white); }
 
+    /* MOBILE STICKY CTA */
+    .mobile-sticky {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 16px 24px;
+    }
+    .mobile-sticky a {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 14px;
+      text-decoration: none;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
     @media (max-width: 900px) {
       nav { padding: 18px 24px; }
       .nav-links { display: none; }
       .page-hero { padding: 100px 24px 60px; }
-      .stub-notice { padding: 60px 24px; }
-      footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
+      section { padding: 72px 24px; }
+      .situations-header, .problem-inner, .pilot-inner { grid-template-columns: 1fr; gap: 40px; }
+      .situation-cards { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; padding-bottom: 100px; }
+      .mobile-sticky { display: block; }
+      .cta-strip { padding-bottom: 80px; }
     }
   </style>
 </head>
@@ -192,23 +416,121 @@
     <a href="/#contact" class="nav-cta">Book a Call</a>
   </nav>
 
+  <!-- HERO -->
   <section class="page-hero">
     <div class="page-eyebrow">Staffing Agencies</div>
     <h1 class="page-headline">
-      Your next client just<br>posted the <em>proof.</em>
+      The company just raised.<br>They're about to <em>hire.</em>
     </h1>
     <p class="page-body">
-      Niche-specific situation copy coming soon. This page will show how public records surface staffing opportunities before your competitors see them.
+      Every staffing agency knows the best time to reach a company is right before they post the job. The problem is knowing when that moment happens. Public records know first.
     </p>
-    <a href="/#contact" class="btn-primary">Book a Call</a>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <a href="/#contact" class="btn-primary">Book a Call</a>
+      <a href="#situations" class="btn-secondary">See the Situations</a>
+    </div>
   </section>
 
-  <div class="stub-notice">
-    <div class="stub-notice-inner">
-      Full page copy in progress. Check back soon or book a call to talk through how situation-based outbound works for staffing.
-    </div>
-  </div>
+  <!-- SITUATIONS -->
+  <section class="situations" id="situations">
+    <div class="situations-inner">
+      <div class="situations-header">
+        <div>
+          <div class="section-label reveal">The situations</div>
+          <h2 class="section-heading reveal">Three things that<br>happen before the <em>job post.</em></h2>
+        </div>
+        <p class="section-body reveal">
+          By the time a company posts a role on LinkedIn, your competitors already know about it. The system watches for what happens before the post goes up.
+        </p>
+      </div>
 
+      <div class="situation-cards">
+        <div class="situation-card reveal">
+          <div class="situation-card-num">01</div>
+          <div class="situation-card-title">They just raised.</div>
+          <p class="situation-card-desc">A company closes a Series A, B, C, or D. Funding announcements are public record. Within 30 days, the executive team starts hiring across sales, engineering, and marketing. The system reads the filing and reaches the VP of Sales before the recruiter job req is even written.</p>
+        </div>
+        <div class="situation-card reveal">
+          <div class="situation-card-num">02</div>
+          <div class="situation-card-title">The role has been open 60 days.</div>
+          <p class="situation-card-desc">Job postings are public. When a role sits open for two months, the internal recruiting team can't fill it. That company needs outside help and most of them know it. The system flags these daily and identifies the hiring manager, not the recruiter.</p>
+        </div>
+        <div class="situation-card reveal">
+          <div class="situation-card-num">03</div>
+          <div class="situation-card-title">A new leader just started.</div>
+          <p class="situation-card-desc">A new CRO or VP of Engineering starts at a company. Leadership changes are public. New leaders hire within their first 90 days, almost every time. The system catches the announcement and reaches them while they're still building their plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="problem-inner">
+      <div>
+        <div class="section-label reveal">The real problem</div>
+        <h2 class="section-heading reveal">You bought the tools.<br>They're not <em>running.</em></h2>
+      </div>
+      <div>
+        <p class="problem-text reveal">
+          Most staffing agencies under 20 people have the same story. Bought outbound software. Ran a few campaigns. Nothing stuck. The tools sit there.
+        </p>
+        <p class="problem-text reveal">
+          The issue was never the software. The issue is that nobody set up the targeting, wrote the outreach, or built the logic that connects a funding round on Tuesday to an email in the right inbox on Wednesday.
+        </p>
+        <p class="problem-text reveal">
+          That's what the pilot builds. If you already own the tools, even better. No new subscriptions. Just someone to make what you bought actually work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILOT -->
+  <section class="pilot">
+    <div class="pilot-inner">
+      <div>
+        <div class="section-label reveal">The 90-Day Pilot</div>
+        <h2 class="section-heading reveal">One number.<br>Ninety <em>days.</em></h2>
+        <div class="pilot-price reveal">$6,500</div>
+        <p class="section-body reveal">
+          The first two weeks answer one question: where do your best clients show up in public data before they know they need you? Everything else is built from that answer.
+        </p>
+      </div>
+      <div>
+        <ul class="pilot-steps reveal">
+          <li>
+            <strong>Weeks 1-2: Diagnostic</strong>
+            Look at your last 10 placements. Find the public record trail: when did the company raise, when did the role open, when did the new exec start? Map the pattern. Set the one success number.
+          </li>
+          <li>
+            <strong>Weeks 3-4: Build</strong>
+            Set up the system to monitor those situations daily. Funding rounds, stale job postings, leadership changes. Outreach written for each trigger. Connected to your existing sending tools.
+          </li>
+          <li>
+            <strong>Weeks 5-12: Run</strong>
+            The system runs. You see which situations convert. The targeting gets tighter every week. First situation-sourced conversations by day 14.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip" id="contact">
+    <div class="section-label">Let's Talk</div>
+    <h2 class="cta-headline reveal">
+      Your next placement starts<br>with a <em>public record.</em>
+    </h2>
+    <p class="cta-sub reveal">
+      One call to see if the situations in your market show up in public data. Most staffing verticals, they do.
+    </p>
+    <div class="cta-actions reveal">
+      <a href="https://calendly.com/lauren-kalmgtm/30min" target="_blank" class="btn-primary">Book a 30-min Call</a>
+      <a href="/" class="btn-secondary">Back to Kalm GTM</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">Kalm <span>GTM</span></div>
     <div class="footer-copy">&copy; 2026 Kalm GTM. Chicago, IL.</div>
@@ -219,5 +541,22 @@
     </div>
   </footer>
 
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-sticky">
+    <a href="https://calendly.com/lauren-kalmgtm/30min" target="_blank">Book a 30-min Call</a>
+  </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
