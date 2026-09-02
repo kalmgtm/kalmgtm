@@ -7,10 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
- 
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
     :root {
       --bg:      #0c0c0b;
       --bg2:     #111110;
@@ -28,9 +28,9 @@
       --mono:    'DM Mono', 'Courier New', monospace;
       --sans:    'Instrument Sans', sans-serif;
     }
- 
+
     html { scroll-behavior: smooth; }
- 
+
     body {
       background: var(--bg);
       color: var(--light);
@@ -40,7 +40,7 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
- 
+
     body::before {
       content: '';
       position: fixed;
@@ -50,7 +50,7 @@
       z-index: 9999;
       opacity: 0.4;
     }
- 
+
     /* NAV */
     nav {
       position: fixed;
@@ -100,7 +100,7 @@
       transition: background 0.2s;
     }
     .nav-cta:hover { background: var(--white); }
- 
+
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -200,9 +200,9 @@
       transition: color 0.2s;
     }
     .btn-ghost:hover { color: var(--white); }
-    .btn-ghost::after { content: '→'; transition: transform 0.2s; }
+    .btn-ghost::after { content: '\2192'; transition: transform 0.2s; }
     .btn-ghost:hover::after { transform: translateX(4px); }
- 
+
     /* STAT CARD */
     .hero-right {
       display: flex;
@@ -244,7 +244,7 @@
       color: var(--muted);
     }
     .stat-divider { height: 1px; background: var(--border); margin: 28px 0; }
- 
+
     /* SECTIONS */
     section { padding: 100px 48px; }
     .section-label {
@@ -274,7 +274,7 @@
     }
     .section-heading em { font-style: italic; color: var(--accent); }
     .section-body { font-size: 16px; color: var(--mid); max-width: 520px; line-height: 1.75; }
- 
+
     /* HOW IT WORKS */
     .how {
       background: var(--bg2);
@@ -296,17 +296,7 @@
     .step-icon { font-size: 28px; margin-bottom: 20px; display: block; }
     .step-title { font-family: var(--serif); font-size: 24px; font-weight: 400; color: var(--white); margin-bottom: 12px; }
     .step-desc { font-size: 13px; color: var(--mid); line-height: 1.7; }
-    .step-tools { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 6px; }
-    .tool-tag {
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      padding: 3px 8px;
-    }
- 
+
     /* SERVICES */
     .services-inner { max-width: 1100px; margin: 0 auto; }
     .services-header {
@@ -316,7 +306,7 @@
       align-items: end;
       margin-bottom: 64px;
     }
-    .service-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+    .service-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; }
     .service-card {
       background: var(--surface);
       padding: 40px 32px;
@@ -327,7 +317,6 @@
     }
     .service-card:nth-child(1) { border-top-color: var(--accent2); }
     .service-card:nth-child(2) { border-top-color: var(--accent); }
-    .service-card:nth-child(3) { border-top-color: var(--red); }
     .service-card:hover { background: #1c1c1a; }
     .service-tier { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
     .service-name { font-family: var(--serif); font-size: 28px; font-weight: 400; color: var(--white); margin-bottom: 8px; }
@@ -352,7 +341,7 @@
       line-height: 1.5;
     }
     .service-list li::before { content: '/'; color: var(--accent); flex-shrink: 0; opacity: 0.5; }
- 
+
     /* PROOF */
     .proof {
       background: var(--bg2);
@@ -382,7 +371,7 @@
     .proof-stat-num { font-family: var(--serif); font-size: 42px; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 8px; }
     .proof-stat-num span { color: var(--accent); }
     .proof-stat-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); line-height: 1.5; }
- 
+
     /* FAQ */
     .faq {
       border-top: 1px solid var(--border);
@@ -433,7 +422,7 @@
       border-top: 1px solid var(--border);
       padding-top: 20px;
     }
- 
+
     /* CONTACT FORM */
     .contact {
       border-top: 1px solid var(--border);
@@ -505,7 +494,7 @@
       color: var(--accent2);
       padding: 16px 0;
     }
- 
+
     /* CTA */
     .cta-strip { text-align: center; padding: 120px 48px; position: relative; overflow: hidden; }
     .cta-strip::before {
@@ -523,7 +512,7 @@
     .cta-headline em { font-style: italic; color: var(--accent); }
     .cta-sub { font-size: 15px; color: var(--mid); max-width: 480px; margin: 0 auto 48px; line-height: 1.75; }
     .cta-actions { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
- 
+
     /* FOOTER */
     footer { border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; }
     .footer-logo { font-family: var(--serif); font-size: 22px; font-weight: 300; color: var(--muted); letter-spacing: 0.06em; }
@@ -532,7 +521,7 @@
     .footer-links { display: flex; gap: 24px; }
     .footer-links a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--white); }
- 
+
     /* MOBILE STICKY CTA */
     .mobile-sticky {
       display: none;
@@ -556,12 +545,12 @@
       padding: 14px;
       text-decoration: none;
     }
- 
+
     /* ANIMATIONS */
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
- 
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       nav { padding: 18px 24px; }
@@ -581,33 +570,34 @@
   </style>
 </head>
 <body>
- 
+
   <!-- NAV -->
   <nav id="nav">
-    <a href="#" class="nav-logo">Kalm <span>GTM</span></a>
+    <a href="/" class="nav-logo">Kalm <span>GTM</span></a>
     <ul class="nav-links">
       <li><a href="#how">How It Works</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="/work">Work</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Book a Call</a>
   </nav>
- 
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-eyebrow">Signal-based outbound · Chicago, IL</div>
+      <div class="hero-eyebrow">Situation-based outbound · Built from public records</div>
       <h1 class="hero-headline">
         Build the machine<br>that <em>sells.</em>
       </h1>
       <p class="hero-sub">
-        You don't have a pipeline problem.<br>You have a systems problem.
+        Somewhere in the public record, a business just entered the exact situation you solve. We find them the day it happens and start the conversation.
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Book a Call</a>
         <a href="#how" class="btn-secondary">See How It Works</a>
       </div>
     </div>
- 
+
     <div class="hero-right">
       <div class="stat-card">
         <div class="stat-item">
@@ -627,20 +617,20 @@
       </div>
     </div>
   </section>
- 
+
   <!-- DEFINITION STRIP -->
   <section style="padding: 56px 48px; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div style="max-width: 1100px; margin: 0 auto;">
       <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 12px;">
         <span style="display: block; width: 20px; height: 1px; background: var(--accent);"></span>
-        Signal-based outbound
+        Situation-based outbound
       </div>
       <div style="font-family: var(--serif); font-size: clamp(22px, 3vw, 36px); font-weight: 300; color: var(--white); line-height: 1.2; letter-spacing: -0.01em;">
-        Your system finds the right accounts<br>at the right moment, <em style="font-style: italic; color: var(--accent);">automatically.</em>
+        Every outreach starts with a fact from the public record.<br>Not a guess from a <em style="font-style: italic; color: var(--accent);">bought list.</em>
       </div>
     </div>
   </section>
- 
+
   <!-- HOW IT WORKS -->
   <section class="how" id="how">
     <div class="how-inner">
@@ -650,113 +640,81 @@
           <h2 class="section-heading reveal">Your system.<br>Built to <em>compound.</em></h2>
         </div>
         <p class="section-body reveal">
-          The scoring model is the brain. n8n is the nervous system. Clay, Claude API, and Instantly are the hands. Built on a $400/month stack with no SDR team and no bloated tech budget required. The system is AI-native throughout — Claude API handles the scoring logic, personalization, and enrichment decisions that would otherwise require a full team.
+          Three steps between a public record and a conversation. No manual prospecting. No bought lists. No tools to learn.
         </p>
       </div>
- 
+
       <div class="steps">
         <div class="step reveal">
           <div class="step-num">01</div>
           <span class="step-icon">⬡</span>
-          <div class="step-title">Signal</div>
-          <p class="step-desc">The triggers that predict buying intent get captured automatically. Hiring signals, tech installs, funding events, behavioral data. All before your competition sees them.</p>
-          <div class="step-tools">
-            <span class="tool-tag">Apollo</span>
-            <span class="tool-tag">Apify</span>
-            <span class="tool-tag">Clay</span>
-          </div>
+          <div class="step-title">Find</div>
+          <p class="step-desc">Public records show who needs you right now. The citation filed last month, the renewal window opening, the job posting open 60 days while competitors fill theirs. We read these daily.</p>
         </div>
         <div class="step reveal">
           <div class="step-num">02</div>
           <span class="step-icon">◈</span>
-          <div class="step-title">Enrich + Score</div>
-          <p class="step-desc">Waterfall enrichment fills every data gap. The scoring model ranks accounts by fit and intent so your team works the right list, not just any list.</p>
-          <div class="step-tools">
-            <span class="tool-tag">Clay</span>
-            <span class="tool-tag">Claude API</span>
-            <span class="tool-tag">Supabase</span>
-          </div>
+          <div class="step-title">Understand</div>
+          <p class="step-desc">Every business ranked by how urgently they need you this month, not how well they match a persona. You only see the top of the list.</p>
         </div>
         <div class="step reveal">
           <div class="step-num">03</div>
           <span class="step-icon">◎</span>
-          <div class="step-title">Route + Send</div>
-          <p class="step-desc">Qualified accounts route automatically into personalized sequences. Your CRM syncs. Reporting runs. Your team wakes up to replies, not tasks.</p>
-          <div class="step-tools">
-            <span class="tool-tag">n8n</span>
-            <span class="tool-tag">Instantly</span>
-            <span class="tool-tag">Attio</span>
-          </div>
+          <div class="step-title">Say Something Worth Reading</div>
+          <p class="step-desc">The first message tells them something true about their own situation they didn't know. No "just checking in." That's why they answer. Your team wakes up to replies, not tasks.</p>
         </div>
       </div>
     </div>
   </section>
- 
+
   <!-- SERVICES -->
   <section id="services">
     <div class="services-inner">
       <div class="services-header">
         <div>
           <div class="section-label reveal">Services</div>
-          <h2 class="section-heading reveal">Three ways<br>to <em>engage.</em></h2>
+          <h2 class="section-heading reveal">Start with<br>the <em>pilot.</em></h2>
         </div>
         <p class="section-body reveal">
-          Every engagement ships with a clear deliverable and timeline. No retainers that drag. No scope creep. Systems that sync with your existing CRM and scale without headcount.
+          Every engagement ships with a clear deliverable and timeline. No scope creep. The ongoing relationship is earned, not assumed.
         </p>
       </div>
- 
+
       <div class="service-cards">
         <div class="service-card reveal">
-          <div class="service-tier">Entry Point</div>
-          <div class="service-name">Audit + Roadmap</div>
-          <div class="service-price">$1,500 – $2,500</div>
+          <div class="service-tier">Start Here</div>
+          <div class="service-name">90-Day Pilot</div>
+          <div class="service-price">$6,500</div>
           <p class="service-desc">
-            A two-week diagnosis of your current outbound motion. You get a full teardown of what's broken and a prioritized build plan, ready to execute immediately.
+            Weeks 1-2: find where your buyers surface in public data and set the one success number. Weeks 3-4: build the system. Weeks 5-12: run and iterate. First situation-sourced conversations by day 14.
           </p>
-          <p class="service-best">Best for: founders who don't know what's broken yet.</p>
+          <p class="service-best">Best for: business owners ready to test situation-based outbound in their market.</p>
           <ul class="service-list">
-            <li>Current stack + motion audit</li>
-            <li>ICP and signal analysis</li>
-            <li>Prioritized build roadmap</li>
-            <li>2-week turnaround</li>
+            <li>Diagnostic: where your buyers appear in public records</li>
+            <li>One success number, agreed upfront</li>
+            <li>System built and running by week 4</li>
+            <li>First conversations by day 14</li>
           </ul>
         </div>
- 
+
         <div class="service-card reveal">
-          <div class="service-tier">Core Offer</div>
-          <div class="service-name">System Build</div>
-          <div class="service-price">$12,000 – $16,000</div>
+          <div class="service-tier">Earned</div>
+          <div class="service-name">Ongoing</div>
+          <div class="service-price">From $2,500 / mo</div>
           <p class="service-desc">
-            A complete signal-to-send outbound system. Built, tested, and handed off with documentation your team can actually use. Works with your existing CRM. One-time, fixed scope.
+            The pilot has to earn this. If the number moved, we keep it moving. Monthly rolling.
           </p>
-          <p class="service-best">Best for: teams ready to replace manual outbound with a system that scales.</p>
+          <p class="service-best">Best for: businesses where the pilot proved the model.</p>
           <ul class="service-list">
-            <li>Full signal to enrich to score to send build</li>
-            <li>Sequences and personalization setup</li>
-            <li>CRM integration and routing</li>
-            <li>4-week delivery</li>
-          </ul>
-        </div>
- 
-        <div class="service-card reveal">
-          <div class="service-tier">Ongoing</div>
-          <div class="service-name">Fractional GTM Eng</div>
-          <div class="service-price">$5,000 – $8,000 / mo</div>
-          <p class="service-desc">
-            Embedded part-time. Your system gets weekly iteration, new signal sources, optimized sequences, and full reporting as you scale. Capped at 2 to 3 clients.
-          </p>
-          <p class="service-best">Best for: growing teams who want a GTM engineer without the full-time hire.</p>
-          <ul class="service-list">
-            <li>Weekly iteration and optimization</li>
-            <li>New signal source development</li>
-            <li>Reporting and performance review</li>
-            <li>Monthly rolling engagement</li>
+            <li>Continued situation sourcing and outreach</li>
+            <li>Monthly iteration and optimization</li>
+            <li>Month-to-month, cancel anytime</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
- 
+
   <!-- PROOF -->
   <section class="proof" id="proof">
     <div class="proof-inner">
@@ -767,7 +725,7 @@
         </blockquote>
         <div class="proof-source reveal">Bottom Line Concepts, B2B financial services, 3-year engagement</div>
       </div>
- 
+
       <div class="proof-stats reveal">
         <div class="proof-stat">
           <div class="proof-stat-num"><span>$5.2</span>M</div>
@@ -778,7 +736,7 @@
           <div class="proof-stat-label">Closed-Won<br>Revenue</div>
         </div>
         <div class="proof-stat">
-          <div class="proof-stat-num"><span>0→1</span></div>
+          <div class="proof-stat-num"><span>0&#8594;1</span></div>
           <div class="proof-stat-label">Built From<br>Scratch</div>
         </div>
         <div class="proof-stat">
@@ -788,7 +746,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- FAQ -->
   <section class="faq">
     <div class="faq-inner">
@@ -797,7 +755,7 @@
         <h2 class="section-heading reveal">What people<br>want to <em>know.</em></h2>
       </div>
       <div class="faq-list">
- 
+
         <div class="faq-item reveal">
           <button class="faq-question">
             <span class="faq-question-text">How long does it take to see results?</span>
@@ -805,11 +763,11 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Most clients see the first replies within two to three weeks of launch. The audit takes two weeks. A full system build ships in three to four. The system compounds after that. The longer it runs, the smarter the scoring gets.
+              The pilot is built to produce the first situation-sourced conversations by day 14. Most clients see replies within the first three weeks. The system compounds after that. The longer it runs, the smarter the targeting gets.
             </div>
           </div>
         </div>
- 
+
         <div class="faq-item reveal">
           <button class="faq-question">
             <span class="faq-question-text">Do we need to switch our current CRM or tools?</span>
@@ -821,7 +779,7 @@
             </div>
           </div>
         </div>
- 
+
         <div class="faq-item reveal">
           <button class="faq-question">
             <span class="faq-question-text">What do we need to have in place before starting?</span>
@@ -829,11 +787,11 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              A clear ICP, some sense of what closed-won looks like, and a CRM or spreadsheet with past deals. That's it. The audit is designed for teams who don't have the rest figured out yet. We start with what you have and build from there.
+              Nothing. If you can tell us who your best client was and why they hired you, weeks one and two find the next fifty in the data.
             </div>
           </div>
         </div>
- 
+
         <div class="faq-item reveal">
           <button class="faq-question">
             <span class="faq-question-text">Is this only for teams with outbound experience?</span>
@@ -845,7 +803,7 @@
             </div>
           </div>
         </div>
- 
+
         <div class="faq-item reveal">
           <button class="faq-question">
             <span class="faq-question-text">How is this different from hiring an SDR?</span>
@@ -853,11 +811,11 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              An SDR is a person doing manual work. This is a system that does that work automatically, capturing signals, scoring accounts, personalizing outreach, syncing your CRM, at a fraction of the cost. The system doesn't get sick, doesn't need ramp time, and doesn't quit after six months. You still need someone to close. You don't need someone to build the list.
+              An SDR is a person doing manual work. This is a system that does that work automatically: finding the right businesses, scoring them by urgency, personalizing outreach, syncing your CRM. At a fraction of the cost. The system doesn't get sick, doesn't need ramp time, and doesn't quit after six months. You still need someone to close. You don't need someone to build the list.
             </div>
           </div>
         </div>
- 
+
         <div class="faq-item reveal">
           <button class="faq-question">
             <span class="faq-question-text">What does it cost to run the system after the build?</span>
@@ -865,11 +823,11 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              The system shown here runs on roughly $400 per month in tools: Clay, n8n, Instantly, and a few supporting APIs. That number scales modestly with volume but stays lean by design. You own the stack. There are no ongoing fees to Kalm GTM unless you choose a fractional engagement.
+              Roughly $400 per month in off-the-shelf tools you own outright. That number scales modestly with volume but stays lean by design. You own the stack. There are no ongoing fees to Kalm GTM unless you choose the ongoing engagement.
             </div>
           </div>
         </div>
- 
+
         <div class="faq-item reveal">
           <button class="faq-question">
             <span class="faq-question-text">Do you work with companies outside Chicago?</span>
@@ -881,7 +839,7 @@
             </div>
           </div>
         </div>
- 
+
         <div class="faq-item reveal">
           <button class="faq-question">
             <span class="faq-question-text">We already have an agency or SDR doing outbound. Is this still relevant?</span>
@@ -889,15 +847,15 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Usually yes. Most agencies build sequences, not systems. Most SDRs work lists, not signals. If your current motion isn't scoring accounts by intent, enriching automatically, or routing based on fit, there's likely a layer missing. The audit is the fastest way to find out what's actually broken.
+              Usually yes. Most agencies build sequences, not systems. Most SDRs work a list someone pulled last quarter. If your current outreach isn't timed to what's actually happening at the company right now, there's a layer missing. The pilot is the fastest way to find out.
             </div>
           </div>
         </div>
- 
+
       </div>
     </div>
   </section>
- 
+
   <!-- CONTACT FORM -->
   <section class="contact" id="reach-out">
     <div class="contact-inner">
@@ -928,7 +886,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- CTA -->
   <section class="cta-strip" id="contact">
     <div class="section-label">Let's Talk</div>
@@ -943,29 +901,30 @@
       <a href="https://substack.com/@kalmgtm" target="_blank" class="btn-secondary">Read the Substack</a>
     </div>
   </section>
- 
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">Kalm <span>GTM</span></div>
-    <div class="footer-copy">© 2026 Kalm GTM. Chicago, IL.</div>
+    <div class="footer-copy">&copy; 2026 Kalm GTM. Chicago, IL.</div>
     <div class="footer-links">
+      <a href="/work">Work</a>
       <a href="https://www.linkedin.com/in/laurenlaftsidis/" target="_blank">LinkedIn</a>
       <a href="https://substack.com/@kalmgtm" target="_blank">Substack</a>
       <a href="/cdn-cgi/l/email-protection#7519140007101b351e1419181201185b161a18">Email</a>
     </div>
   </footer>
- 
+
   <!-- MOBILE STICKY CTA -->
   <div class="mobile-sticky">
     <a href="https://calendly.com/lauren-kalmgtm/30min" target="_blank">Book a 30-min Call</a>
   </div>
- 
+
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     });
- 
+
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -976,7 +935,7 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
- 
+
     // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -986,7 +945,7 @@
         if (!isOpen) item.classList.add('open');
       });
     });
- 
+
     // Form submit
     function handleSubmit(e) {
       e.preventDefault();
@@ -995,12 +954,12 @@
       const name = form.querySelector('input[type="text"]').value;
       const email = form.querySelector('input[type="email"]').value;
       const message = form.querySelector('textarea').value;
- 
+
       if (!name || !email || !message) return;
- 
+
       btn.style.opacity = '0.5';
       btn.disabled = true;
- 
+
       fetch('https://formspree.io/f/mvzvdkqo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
