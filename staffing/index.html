@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kalm GTM — Outbound for Staffing Agencies</title>
+  <title>Kalm GTM — Healthcare Staffing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -196,6 +196,138 @@
     .section-heading em { font-style: italic; color: var(--accent); }
     .section-body { font-size: 16px; color: var(--mid); max-width: 520px; line-height: 1.75; }
 
+    /* SAMPLE LIST */
+    .sample {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .sample-inner { max-width: 1100px; margin: 0 auto; }
+    .sample-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 72px;
+    }
+    .sample-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 32px;
+      margin-bottom: 2px;
+    }
+    .sample-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .sample-card-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .sample-card-score {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--red);
+      padding: 4px 10px;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+    .sample-card-score.high { background: var(--red); }
+    .sample-card-location {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+    .sample-card-stats {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .sample-stat {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--light);
+    }
+    .sample-stat strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+    .sample-card-brief {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.7;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .sample-card-talk {
+      font-size: 13px;
+      color: var(--accent);
+      font-style: italic;
+      line-height: 1.6;
+      margin-top: 12px;
+      padding: 12px 16px;
+      background: rgba(201,169,110,0.04);
+      border-left: 2px solid var(--accent);
+    }
+    .sample-fade {
+      text-align: center;
+      padding: 40px 0 0;
+    }
+    .sample-fade-text {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    /* HOW */
+    .how {
+      border-bottom: 1px solid var(--border);
+    }
+    .how-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .how-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .how-steps li {
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.7;
+      padding-left: 20px;
+      border-left: 1px solid var(--border);
+    }
+    .how-steps li strong {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
     /* SITUATIONS */
     .situations {
       background: var(--bg2);
@@ -238,45 +370,47 @@
       line-height: 1.7;
     }
 
-    /* PROBLEM */
-    .problem {
+    /* ROI */
+    .roi {
       border-bottom: 1px solid var(--border);
     }
-    .problem-inner {
+    .roi-inner {
       max-width: 1100px;
       margin: 0 auto;
+    }
+    .roi-header {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 56px;
     }
-    .problem-text {
-      font-size: 16px;
-      color: var(--mid);
-      line-height: 1.75;
-      margin-bottom: 20px;
+    .roi-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
     }
-    .problem-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .roi-card {
+      background: var(--surface);
+      padding: 36px 28px;
+      text-align: center;
     }
-    .problem-list li {
+    .roi-num {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .roi-num span { color: var(--accent); }
+    .roi-label {
       font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      color: var(--light);
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      line-height: 1.6;
-    }
-    .problem-list li::before {
-      content: '/';
-      color: var(--accent);
-      flex-shrink: 0;
-      opacity: 0.5;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     /* PILOT */
@@ -396,8 +530,9 @@
       .nav-links { display: none; }
       .page-hero { padding: 100px 24px 60px; }
       section { padding: 72px 24px; }
-      .situations-header, .problem-inner, .pilot-inner { grid-template-columns: 1fr; gap: 40px; }
-      .situation-cards { grid-template-columns: 1fr; }
+      .sample-header, .situations-header, .how-inner, .pilot-inner, .roi-header { grid-template-columns: 1fr; gap: 40px; }
+      .situation-cards, .roi-cards { grid-template-columns: 1fr; }
+      .sample-card-stats { flex-direction: column; gap: 8px; }
       footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; padding-bottom: 100px; }
       .mobile-sticky { display: block; }
       .cta-strip { padding-bottom: 80px; }
@@ -413,74 +548,191 @@
       <li><a href="/#services">Services</a></li>
       <li><a href="/work">Work</a></li>
     </ul>
-    <a href="/#contact" class="nav-cta">Book a Call</a>
+    <a href="#contact" class="nav-cta">Book a Call</a>
   </nav>
 
   <!-- HERO -->
   <section class="page-hero">
-    <div class="page-eyebrow">Staffing Agencies</div>
+    <div class="page-eyebrow">Healthcare Staffing Agencies</div>
     <h1 class="page-headline">
-      The company just raised.<br>They're about to <em>hire.</em>
+      The facility is bleeding<br>nurses. You should know<br><em>first.</em>
     </h1>
     <p class="page-body">
-      Every staffing agency knows the best time to reach a company is right before they post the job. The problem is knowing when that moment happens. Public records know first.
+      Every Monday, a scored list of skilled nursing facilities in your market that need staffing help right now. Ranked by urgency. With the administrator's number and what to say when you call.
     </p>
     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-      <a href="/#contact" class="btn-primary">Book a Call</a>
-      <a href="#situations" class="btn-secondary">See the Situations</a>
+      <a href="#contact" class="btn-primary">Book a Call</a>
+      <a href="#sample" class="btn-secondary">See a Sample List</a>
     </div>
   </section>
 
-  <!-- SITUATIONS -->
+  <!-- SAMPLE MONDAY LIST -->
+  <section class="sample" id="sample">
+    <div class="sample-inner">
+      <div class="sample-header">
+        <div>
+          <div class="section-label reveal">The Monday List</div>
+          <h2 class="section-heading reveal">This is what<br>shows up in your <em>inbox.</em></h2>
+        </div>
+        <p class="section-body reveal">
+          Every facility scored on live CMS data: staffing ratings, nurse turnover, RN hours, health deficiencies, ownership changes. You get the worst situations first. Each one comes with a talk track built from the data.
+        </p>
+      </div>
+
+      <div class="sample-card reveal">
+        <div class="sample-card-header">
+          <div class="sample-card-name">Charleston Rehab and Nursing</div>
+          <div class="sample-card-score high">Score: 125</div>
+        </div>
+        <div class="sample-card-location">Charleston, IL &middot; 139 beds</div>
+        <div class="sample-card-stats">
+          <div class="sample-stat">Staffing Rating: <strong>1/5</strong></div>
+          <div class="sample-stat">Nurse Turnover: <strong>72%</strong></div>
+          <div class="sample-stat">RN Turnover: <strong>91%</strong></div>
+          <div class="sample-stat">RN Hours/Resident/Day: <strong>0.41</strong></div>
+          <div class="sample-stat">Deficiencies: <strong>38</strong></div>
+        </div>
+        <div class="sample-card-brief">
+          CMS staffing rating: 1 out of 5. Nursing staff turnover: 72%. RN turnover: 91%. RN hours per resident per day: 0.41, well below the national average. 38 health deficiencies on the most recent survey. Ownership changed in the last 12 months.
+        </div>
+        <div class="sample-card-talk">
+          "Your facility came up in some staffing data I review regularly. It looks like nursing coverage has been a challenge. We specialize in placing RNs and CNAs in the Charleston area. Is that something worth a quick conversation?"
+        </div>
+      </div>
+
+      <div class="sample-card reveal">
+        <div class="sample-card-header">
+          <div class="sample-card-name">Timbercreek Rehab and Health Care Center</div>
+          <div class="sample-card-score high">Score: 115</div>
+        </div>
+        <div class="sample-card-location">Pekin, IL &middot; 202 beds</div>
+        <div class="sample-card-stats">
+          <div class="sample-stat">Staffing Rating: <strong>1/5</strong></div>
+          <div class="sample-stat">Nurse Turnover: <strong>66%</strong></div>
+          <div class="sample-stat">RN Turnover: <strong>93%</strong></div>
+          <div class="sample-stat">RN Hours/Resident/Day: <strong>0.20</strong></div>
+          <div class="sample-stat">Deficiencies: <strong>25</strong></div>
+        </div>
+        <div class="sample-card-brief">
+          CMS staffing rating: 1 out of 5. Nursing staff turnover: 66%. RN turnover: 93%. RN hours per resident per day: 0.20, well below the national average. 25 health deficiencies on the most recent survey.
+        </div>
+        <div class="sample-card-talk">
+          "Your facility came up in some staffing data I review regularly. It looks like nursing coverage has been a challenge. We specialize in placing RNs and CNAs in the Pekin area. Is that something worth a quick conversation?"
+        </div>
+      </div>
+
+      <div class="sample-fade reveal">
+        <div class="sample-fade-text">+ 8 more facilities on the full Monday list</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT THE SYSTEM WATCHES -->
   <section class="situations" id="situations">
     <div class="situations-inner">
       <div class="situations-header">
         <div>
-          <div class="section-label reveal">The situations</div>
-          <h2 class="section-heading reveal">Three things that<br>happen before the <em>job post.</em></h2>
+          <div class="section-label reveal">What the system watches</div>
+          <h2 class="section-heading reveal">Six signals that a facility<br>needs <em>your call.</em></h2>
         </div>
         <p class="section-body reveal">
-          By the time a company posts a role on LinkedIn, your competitors already know about it. The system watches for what happens before the post goes up.
+          All from CMS federal data, updated regularly. Not a bought list. Not a guess. Every facility scored on what's actually happening inside.
         </p>
       </div>
 
       <div class="situation-cards">
         <div class="situation-card reveal">
           <div class="situation-card-num">01</div>
-          <div class="situation-card-title">They just raised.</div>
-          <p class="situation-card-desc">A company closes a Series A, B, C, or D. Funding announcements are public record. Within 30 days, the executive team starts hiring across sales, engineering, and marketing. The system reads the filing and reaches the VP of Sales before the recruiter job req is even written.</p>
+          <div class="situation-card-title">Low staffing rating</div>
+          <p class="situation-card-desc">CMS rates every nursing home 1-5 on staffing. A 1 or 2 means they're running short. These facilities are the most likely to pick up the phone.</p>
         </div>
         <div class="situation-card reveal">
           <div class="situation-card-num">02</div>
-          <div class="situation-card-title">The role has been open 60 days.</div>
-          <p class="situation-card-desc">Job postings are public. When a role sits open for two months, the internal recruiting team can't fill it. That company needs outside help and most of them know it. The system flags these daily and identifies the hiring manager, not the recruiter.</p>
+          <div class="situation-card-title">High nurse turnover</div>
+          <p class="situation-card-desc">60%+ nursing staff turnover means they can't keep people. They're either burning through agency staff already or about to start. Either way, they need options.</p>
         </div>
         <div class="situation-card reveal">
           <div class="situation-card-num">03</div>
-          <div class="situation-card-title">A new leader just started.</div>
-          <p class="situation-card-desc">A new CRO or VP of Engineering starts at a company. Leadership changes are public. New leaders hire within their first 90 days, almost every time. The system catches the announcement and reaches them while they're still building their plan.</p>
+          <div class="situation-card-title">RN hours below threshold</div>
+          <p class="situation-card-desc">When RN hours per resident per day drop below 0.5, the facility is understaffed on its most critical role. That's a compliance risk and an urgent hire.</p>
+        </div>
+      </div>
+      <div class="situation-cards" style="margin-top: 2px;">
+        <div class="situation-card reveal">
+          <div class="situation-card-num">04</div>
+          <div class="situation-card-title">Health deficiencies</div>
+          <p class="situation-card-desc">10+ deficiencies on the most recent CMS survey. Many are staffing-related. A facility under scrutiny from regulators is more motivated to fix coverage gaps fast.</p>
+        </div>
+        <div class="situation-card reveal">
+          <div class="situation-card-num">05</div>
+          <div class="situation-card-title">Ownership change</div>
+          <p class="situation-card-desc">New ownership in the last 12 months. New owners clean house, restructure staff, and bring in outside help. The transition period is when they need agencies most.</p>
+        </div>
+        <div class="situation-card reveal">
+          <div class="situation-card-num">06</div>
+          <div class="situation-card-title">Low overall rating</div>
+          <p class="situation-card-desc">A 1 or 2 star overall CMS rating. These facilities are under pressure from families, regulators, and corporate. Staffing is almost always part of the fix.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <section class="problem">
-    <div class="problem-inner">
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="how-inner">
       <div>
-        <div class="section-label reveal">The real problem</div>
-        <h2 class="section-heading reveal">You bought the tools.<br>They're not <em>running.</em></h2>
+        <div class="section-label reveal">How it works</div>
+        <h2 class="section-heading reveal">Monday morning.<br>Open email.<br>Start <em>dialing.</em></h2>
+        <p class="section-body reveal" style="margin-top: 8px;">
+          No dashboard to learn. No tool to log into. No data to interpret. A list of facilities, ranked by who needs you most, with the phone number and what to say.
+        </p>
       </div>
-      <div>
-        <p class="problem-text reveal">
-          Most staffing agencies under 20 people have the same story. Bought outbound software. Ran a few campaigns. Nothing stuck. The tools sit there.
+      <ul class="how-steps reveal">
+        <li>
+          <strong>The system pulls CMS data</strong>
+          Federal staffing ratings, turnover, deficiency counts, RN hours, ownership changes. Scored and ranked by urgency for your specific market and specialty.
+        </li>
+        <li>
+          <strong>You get the Monday list</strong>
+          Top 10 facilities in your geography, sorted by situation severity. Each one includes a brief on what's happening and a talk track tailored to the data.
+        </li>
+        <li>
+          <strong>You call with a reason</strong>
+          Not "just checking in." You know their staffing rating, their turnover number, their deficiency count. The administrator hears someone who did their homework.
+        </li>
+        <li>
+          <strong>The list refreshes weekly</strong>
+          CMS data updates. Situations change. New facilities enter crisis. The system catches it. Monday morning, new list.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ROI -->
+  <section class="roi">
+    <div class="roi-inner">
+      <div class="roi-header">
+        <div>
+          <div class="section-label reveal">The math</div>
+          <h2 class="section-heading reveal">One placement pays<br>for the <em>year.</em></h2>
+        </div>
+        <p class="section-body reveal">
+          A single travel nurse placement bills $15-50K+ to the agency. The pilot is $7,500. If the list produces one placement in 90 days, it paid for itself. Everything after that is margin.
         </p>
-        <p class="problem-text reveal">
-          The issue was never the software. The issue is that nobody set up the targeting, wrote the outreach, or built the logic that connects a funding round on Tuesday to an email in the right inbox on Wednesday.
-        </p>
-        <p class="problem-text reveal">
-          That's what the pilot builds. If you already own the tools, even better. No new subscriptions. Just someone to make what you bought actually work.
-        </p>
+      </div>
+      <div class="roi-cards reveal">
+        <div class="roi-card">
+          <div class="roi-num"><span>$7,500</span></div>
+          <div class="roi-label">90-day pilot</div>
+        </div>
+        <div class="roi-card">
+          <div class="roi-num"><span>1</span></div>
+          <div class="roi-label">Placement to<br>break even</div>
+        </div>
+        <div class="roi-card">
+          <div class="roi-num"><span>$2,500</span>/mo</div>
+          <div class="roi-label">Ongoing after<br>pilot proves out</div>
+        </div>
       </div>
     </div>
   </section>
@@ -490,25 +742,25 @@
     <div class="pilot-inner">
       <div>
         <div class="section-label reveal">The 90-Day Pilot</div>
-        <h2 class="section-heading reveal">One number.<br>Ninety <em>days.</em></h2>
+        <h2 class="section-heading reveal">Your market.<br>Your <em>list.</em></h2>
         <div class="pilot-price reveal">$7,500</div>
         <p class="section-body reveal">
-          The first two weeks answer one question: where do your best clients show up in public data before they know they need you? Everything else is built from that answer.
+          Scoped to your state, your specialty, your geography. The system is built around the facilities you'd actually call.
         </p>
       </div>
       <div>
         <ul class="pilot-steps reveal">
           <li>
-            <strong>Weeks 1-2: Diagnostic</strong>
-            Look at your last 10 placements. Find the public record trail: when did the company raise, when did the role open, when did the new exec start? Map the pattern. Set the one success number.
+            <strong>Week 1: Scope</strong>
+            Which states, which facility types, which specialties (RN, CNA, LPN, allied health). What does a good placement look like for your agency. Set the success number.
           </li>
           <li>
-            <strong>Weeks 3-4: Build</strong>
-            Set up the system to monitor those situations daily. Funding rounds, stale job postings, leadership changes. Outreach written for each trigger. Connected to your existing sending tools.
+            <strong>Week 2: Build</strong>
+            System pulls and scores every facility in your market. First Monday list delivered. You start calling immediately.
           </li>
           <li>
-            <strong>Weeks 5-12: Run</strong>
-            The system runs. You see which situations convert. The targeting gets tighter every week. First situation-sourced conversations by day 14.
+            <strong>Weeks 3-12: Run + refine</strong>
+            Weekly lists. Feedback loop: which facilities answered, which converted, which were dead ends. The scoring gets smarter. The list gets sharper.
           </li>
         </ul>
       </div>
@@ -519,10 +771,10 @@
   <section class="cta-strip" id="contact">
     <div class="section-label">Let's Talk</div>
     <h2 class="cta-headline reveal">
-      Your next placement starts<br>with a <em>public record.</em>
+      Forty facilities need nurses<br>in your market <em>right now.</em>
     </h2>
     <p class="cta-sub reveal">
-      One call to see if the situations in your market show up in public data. Most staffing verticals, they do.
+      One call to see what the data looks like for your state. I'll pull a sample list before we talk so you can see it live.
     </p>
     <div class="cta-actions reveal">
       <a href="https://calendly.com/lauren-kalmgtm/30min" target="_blank" class="btn-primary">Book a 30-min Call</a>
