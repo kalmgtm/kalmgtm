@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalm GTM — Why Situation Beats Persona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0c0c0b;
+      --bg2:     #111110;
+      --surface: #171716;
+      --border:  #242422;
+      --muted:   #4a4a46;
+      --mid:     #8a8a84;
+      --light:   #c8c8c0;
+      --white:   #f0ede6;
+      --accent:  #c9a96e;
+      --accent2: #7eb8a0;
+      --glow:    rgba(201,169,110,0.06);
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --mono:    'DM Mono', 'Courier New', monospace;
+      --sans:    'Instrument Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--light);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(12,12,11,0.92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 9px 20px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--white); }
+
+    /* HERO */
+    .page-hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 48px 80px;
+      max-width: 720px;
+    }
+    .page-eyebrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .page-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px; height: 1px;
+      background: var(--accent);
+    }
+    .page-headline {
+      font-family: var(--serif);
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 300;
+      line-height: 1.08;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+    .page-headline em { font-style: italic; color: var(--accent); }
+    .page-sub {
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--mid);
+      max-width: 520px;
+    }
+
+    /* ARTICLE */
+    .article {
+      padding: 0 48px 100px;
+    }
+    .article-inner {
+      max-width: 680px;
+    }
+    .article-inner p {
+      font-size: 16px;
+      color: var(--light);
+      line-height: 1.85;
+      margin-bottom: 28px;
+    }
+    .article-inner h3 {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--white);
+      margin-top: 56px;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    /* COMPARISON */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin: 32px 0;
+    }
+    .comparison-card {
+      background: var(--surface);
+      padding: 28px 24px;
+    }
+    .comparison-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .comparison-text {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--mid);
+      line-height: 1.5;
+      font-style: italic;
+    }
+    .comparison-card:last-child .comparison-text {
+      color: var(--white);
+    }
+    .comparison-card:last-child {
+      border-top: 2px solid var(--accent);
+    }
+    .comparison-note {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* PULL QUOTE */
+    .article-pull {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.4;
+      margin: 48px 0;
+      padding-left: 24px;
+      border-left: 2px solid var(--accent);
+    }
+    .article-pull em { font-style: italic; color: var(--accent); }
+
+    /* BTN */
+    .btn-primary {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 14px 32px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--white); }
+    .btn-secondary {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 13px 32px;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--mid); color: var(--white); }
+
+    /* CTA */
+    .cta-strip {
+      text-align: center;
+      padding: 120px 48px;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+    }
+    .cta-strip::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 800px; height: 400px;
+      background: radial-gradient(ellipse, var(--glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .cta-headline {
+      font-family: var(--serif);
+      font-size: clamp(42px, 5.5vw, 72px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 24px;
+    }
+    .cta-headline em { font-style: italic; color: var(--accent); }
+    .cta-sub {
+      font-size: 15px;
+      color: var(--mid);
+      max-width: 480px;
+      margin: 0 auto 48px;
+      line-height: 1.75;
+    }
+    .cta-actions { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-logo { font-family: var(--serif); font-size: 22px; font-weight: 300; color: var(--muted); letter-spacing: 0.06em; }
+    .footer-logo span { color: var(--accent); }
+    .footer-copy { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--muted); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      .nav-links { display: none; }
+      .page-hero { padding: 100px 24px 60px; }
+      .article { padding: 0 24px 72px; }
+      .comparison { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Kalm <span>GTM</span></a>
+    <ul class="nav-links">
+      <li><a href="/#how">How It Works</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/work">Work</a></li>
+      <li><a href="/staffing">Staffing</a></li>
+    </ul>
+    <a href="/#contact" class="nav-cta">Book a Call</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="page-eyebrow">Article</div>
+    <h1 class="page-headline">
+      Why situation<br>beats <em>persona.</em>
+    </h1>
+    <p class="page-sub">
+      The difference between targeting who someone is and reaching them when they need you.
+    </p>
+  </section>
+
+  <!-- ARTICLE -->
+  <div class="article">
+    <div class="article-inner">
+
+      <p class="reveal">Everyone in outbound starts with the same question: who should I be talking to?</p>
+
+      <p class="reveal">You build a profile. Title, industry, company size, geography. You get as specific as you can. "CFOs at mid-market manufacturing companies in the Midwest." "Staffing agency owners with 10-50 employees." "Insurance brokers who handle commercial lines."</p>
+
+      <p class="reveal">That's your persona. And there's nothing wrong with it — it's the right starting point. The problem is that it's also the ending point for most people's outbound. You define who, you buy a list, you write a sequence, you hit send.</p>
+
+      <p class="reveal">And everyone else who sells to that persona did the same thing on the same day with the same list from the same data provider.</p>
+
+      <p class="reveal">This is why reply rates keep dropping. Not because the emails got worse. Because the targeting is identical. When five sellers all identify the same person using the same filters, the only thing that differentiates them is who wrote the better subject line. That's not a system. That's a coin flip.</p>
+
+      <h3 class="reveal">Persona tells you who. Situation tells you when.</h3>
+
+      <p class="reveal">A persona doesn't change day to day. A CFO was a CFO yesterday. A staffing agency owner will be a staffing agency owner tomorrow. There's nothing about who someone is that tells you today is the right day to reach out.</p>
+
+      <p class="reveal">A situation is different. A situation is something happening at a specific company at a specific time that makes them more likely to need what you offer — not more likely in general, but more likely right now.</p>
+
+      <p class="reveal">Here's the version I lived for three years.</p>
+
+      <p class="reveal">I was running outbound for a financial services firm that helps businesses claim the Employee Retention Credit. The persona would have been something like "CFOs at companies with 50-500 employees." Fine. Also useless — that's hundreds of thousands of businesses and none of them are expecting your email.</p>
+
+      <p class="reveal">PPP loan data is published by the federal government. Every business that took the loan is on the list. Public record. And a business that took the PPP loan almost certainly qualifies for the ERC.</p>
+
+      <p class="reveal">So instead of building a persona list and hoping, I built a situation list. Every email said the same thing in essence: you took this loan, you likely qualify for this credit, here's what you might be leaving on the table.</p>
+
+      <div class="article-pull reveal">
+        <em>12% reply rate.</em> Three years. $5.2M in pipeline. Because every email told them something about their own business they didn't already know.
+      </div>
+
+      <h3 class="reveal">The first 10 seconds sound different.</h3>
+
+      <p class="reveal">If you've ever made cold calls, you know the gap.</p>
+
+      <p class="reveal">There's a version where you dial someone, introduce yourself, and hope they need you today. And there's a version where you already know what's happening at their business before you pick up the phone. The second version doesn't start with a pitch. It starts with something the other person recognizes. And the conversation goes somewhere instead of ending in a dial tone.</p>
+
+      <div class="comparison reveal">
+        <div class="comparison-card">
+          <div class="comparison-label">Persona-based</div>
+          <div class="comparison-text">"You're a [title] at a [type of company]. We help companies like yours [do thing]."</div>
+          <div class="comparison-note">Could be sent to 10,000 people.</div>
+        </div>
+        <div class="comparison-card">
+          <div class="comparison-label">Situation-based</div>
+          <div class="comparison-text">"You took the PPP loan in 2021. You likely qualify for the Employee Retention Credit. Most businesses your size are leaving six figures on the table."</div>
+          <div class="comparison-note">Could only be written about one company.</div>
+        </div>
+      </div>
+
+      <p class="reveal">The person reading it can feel the difference instantly. They know you did the work. They know you looked at their business specifically, not their category generally. That's why they reply.</p>
+
+      <h3 class="reveal">Personas go stale. Situations compound.</h3>
+
+      <p class="reveal">A persona list decays the moment you buy it. You run 5,000 contacts through a sequence, and then what? You buy another 5,000. The list doesn't get smarter. It just gets longer. And every batch performs about the same as the last one because the targeting hasn't improved — only the volume.</p>
+
+      <p class="reveal">Situation-based systems work differently. Every conversation teaches you something. Which situations lead to meetings. Which ones sound urgent on paper but aren't. Which data points actually predict that someone will pick up the phone.</p>
+
+      <p class="reveal">Over three years running that system, the targeting got sharper every quarter. Not because the list got bigger, but because the pattern recognition got better. By year two, I could tell which prospects would reply before I hit send. Same data source. Better judgment built from thousands of real conversations.</p>
+
+      <p class="reveal">That's what compounding means in outbound. Not more emails. Better aim that improves with every call you make.</p>
+
+      <h3 class="reveal">One question changes the whole approach.</h3>
+
+      <p class="reveal">Stop asking "who fits my ICP?"</p>
+
+      <p class="reveal">Start asking "who needs me this week?"</p>
+
+      <p class="reveal">The first question gives you a list. The second gives you a reason to call. And the reason is the only part that matters — it's the difference between getting ignored and getting a meeting.</p>
+
+      <p class="reveal">The answer is almost always sitting in a public record somewhere. A government filing, a federal database, an inspection report. Data that's free, updated regularly, and ignored by nearly everyone selling into that market.</p>
+
+      <p class="reveal">Your persona tells you the universe. The situation tells you who in that universe to call today, and what to say when they answer.</p>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="section-label">See It in Practice</div>
+    <h2 class="cta-headline reveal">
+      This is what the<br>system <em>produces.</em>
+    </h2>
+    <p class="cta-sub reveal">
+      The approach described above, automated. Scored leads from public records, delivered weekly, with talk tracks built from the data.
+    </p>
+    <div class="cta-actions reveal">
+      <a href="/work/diagnostic/" class="btn-primary">See a Sample Diagnostic</a>
+      <a href="/work/blc/" class="btn-secondary">Read the Case Study</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Kalm <span>GTM</span></div>
+    <div class="footer-copy">&copy; 2026 Kalm GTM. Chicago, IL.</div>
+    <div class="footer-links">
+      <a href="/work">Work</a>
+      <a href="https://www.linkedin.com/in/laurenlaftsidis/" target="_blank">LinkedIn</a>
+      <a href="https://substack.com/@kalmgtm" target="_blank">Substack</a>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
