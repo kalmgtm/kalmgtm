@@ -101,6 +101,7 @@
       transition: background 0.2s;
     }
     .nav-cta:hover { background: var(--white); }
+    .nav-hamburger { display: none; }
 
     /* HERO */
     .page-hero {
@@ -314,6 +315,26 @@
     @media (max-width: 900px) {
       nav { padding: 18px 24px; }
       .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger {
+        display: flex; flex-direction: column; gap: 5px;
+        background: none; border: none; cursor: pointer; padding: 8px;
+      }
+      .nav-hamburger span {
+        display: block; width: 20px; height: 1.5px; background: var(--white);
+        transition: transform 0.3s, opacity 0.3s;
+      }
+      nav.menu-open .nav-hamburger span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+      nav.menu-open .nav-hamburger span:nth-child(2) { opacity: 0; }
+      nav.menu-open .nav-hamburger span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+      nav.menu-open .nav-links {
+        display: flex; flex-direction: column;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: rgba(12,12,11,0.98); backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 24px; gap: 20px;
+      }
+      nav.menu-open .nav-links a { font-size: 13px; }
       .page-hero { padding: 100px 24px 60px; }
       .article { padding: 0 24px 72px; }
       .comparison { grid-template-columns: 1fr; }
@@ -332,6 +353,7 @@
       <li><a href="/staffing">Staffing</a></li>
     </ul>
     <a href="/#contact" class="nav-cta">Book a Call</a>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
   <!-- HERO -->
@@ -450,6 +472,10 @@
   </footer>
 
   <script>
+    document.querySelector('.nav-hamburger').addEventListener('click', () => {
+      document.querySelector('nav').classList.toggle('menu-open');
+    });
+
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
