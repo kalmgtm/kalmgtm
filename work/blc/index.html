@@ -166,42 +166,6 @@
     .section-heading em { font-style: italic; color: var(--accent); }
     .section-body { font-size: 16px; color: var(--mid); max-width: 520px; line-height: 1.75; }
 
-    /* STATS */
-    .stats {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .stats-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-    }
-    .stat-card {
-      background: var(--surface);
-      padding: 40px 28px;
-      text-align: center;
-    }
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 48px;
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .stat-num span { color: var(--accent); }
-    .stat-label {
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
     /* NARRATIVE */
     .narrative {
       border-bottom: 1px solid var(--border);
@@ -222,75 +186,67 @@
     .narrative-text p { margin-bottom: 24px; }
     .narrative-text p:last-child { margin-bottom: 0; }
 
-    /* TIMELINE */
-    .timeline {
+    /* PULL QUOTE */
+    .pull-quote {
       background: var(--bg2);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    .timeline-inner {
-      max-width: 1100px;
+    .pull-quote-inner {
+      max-width: 800px;
       margin: 0 auto;
+      text-align: center;
     }
-    .timeline-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: end;
-      margin-bottom: 72px;
+    .pull-quote-text {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 40px;
     }
-    .timeline-items {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+    .pull-quote-text em { font-style: italic; color: var(--accent); }
+    .pull-quote-stats {
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
     }
-    .timeline-item {
-      background: var(--surface);
-      padding: 40px 32px;
+    .pull-quote-stat {
+      text-align: center;
     }
-    .timeline-period {
+    .pull-quote-num {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .pull-quote-num span { color: var(--accent); }
+    .pull-quote-label {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-    .timeline-title {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-    .timeline-desc {
-      font-size: 13px;
-      color: var(--mid);
-      line-height: 1.7;
+      color: var(--muted);
     }
 
-    /* WHY */
-    .why {
+    /* BRIDGE */
+    .bridge {
       border-bottom: 1px solid var(--border);
     }
-    .why-inner {
+    .bridge-inner {
       max-width: 720px;
       margin: 0 auto;
     }
-    .why-text {
-      font-family: var(--serif);
-      font-size: clamp(22px, 3vw, 32px);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.45;
-      margin-bottom: 32px;
-    }
-    .why-text em { font-style: italic; color: var(--accent); }
-    .why-detail {
-      font-size: 15px;
+    .bridge-text {
+      font-size: 16px;
       color: var(--mid);
       line-height: 1.8;
     }
+    .bridge-text p { margin-bottom: 24px; }
+    .bridge-text p:last-child { margin-bottom: 0; }
 
     /* BTN */
     .btn-primary {
@@ -371,9 +327,8 @@
       .nav-links { display: none; }
       .page-hero { padding: 100px 24px 60px; }
       section { padding: 72px 24px; padding-bottom: 80px; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
-      .narrative-inner, .timeline-header { grid-template-columns: 1fr; gap: 40px; }
-      .timeline-items { grid-template-columns: 1fr; }
+      .narrative-inner { grid-template-columns: 1fr; gap: 40px; }
+      .pull-quote-stats { gap: 40px; }
       footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
     }
   </style>
@@ -393,121 +348,93 @@
 
   <!-- HERO -->
   <section class="page-hero">
-    <div class="page-eyebrow">Case Study</div>
+    <div class="page-eyebrow">Case Study &middot; Where the approach started</div>
     <h1 class="page-headline">
       Bottom Line<br><em>Concepts.</em>
     </h1>
     <p class="page-body">
-      B2B financial services. No outbound function. No SDR team. One person built the system and ran it for three years.
+      A B2B financial services firm that helps businesses claim the Employee Retention Credit. I built and ran their outbound system as an external operator for three years. This engagement is the reason Kalm GTM exists.
     </p>
   </section>
 
-  <!-- STATS -->
-  <section class="stats" style="padding: 0;">
-    <div class="stats-inner">
-      <div class="stat-card reveal">
-        <div class="stat-num"><span>$5.2</span>M</div>
-        <div class="stat-label">Pipeline<br>Generated</div>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-num"><span>$1</span>M</div>
-        <div class="stat-label">Closed-Won<br>Revenue</div>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-num"><span>12</span>%</div>
-        <div class="stat-label">Reply<br>Rate</div>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-num"><span>$400</span></div>
-        <div class="stat-label">Monthly Tool<br>Budget</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE SITUATION -->
-  <section class="narrative">
-    <div class="narrative-inner">
-      <div>
-        <div class="section-label reveal">The Situation</div>
-        <h2 class="section-heading reveal">No pipeline.<br>No <em>system.</em></h2>
-      </div>
-      <div class="narrative-text reveal">
-        <p>BLC helps businesses recover tax credits. New business came from referrals and inbound only. No outbound motion. No sequences. No prospecting process.</p>
-        <p>When referrals slowed down, revenue slowed down. They needed pipeline that didn't depend on who happened to call that month.</p>
-        <p>They didn't want to hire a sales team. They wanted a system one person could run.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHAT WAS BUILT -->
+  <!-- THE INSIGHT -->
   <section class="narrative" style="background: var(--bg2); border-top: 1px solid var(--border);">
     <div class="narrative-inner">
       <div>
-        <div class="section-label reveal">What Was Built</div>
-        <h2 class="section-heading reveal">Public records.<br>Not bought <em>lists.</em></h2>
+        <div class="section-label reveal">The Insight</div>
+        <h2 class="section-heading reveal">PPP loan records<br>are <em>public.</em></h2>
       </div>
       <div class="narrative-text reveal">
-        <p>The system found businesses entering situations where they'd need BLC's help — a new filing, a policy change, a regulatory event. Not a bought list of companies that looked right. Companies where something specific was happening right now.</p>
-        <p>Every first message referenced a fact about the prospect's business. That's why they replied — the message told them something true about their own situation that they didn't expect a stranger to know.</p>
-        <p>12% reply rate. Average for cold outreach is 1-3%.</p>
-        <p>Total tool cost: $400/month. One person ran the entire operation.</p>
+        <p>BLC helps businesses claim the Employee Retention Credit — a federal tax credit most qualifying businesses don't know they're eligible for. The problem was finding the right businesses at the right time.</p>
+        <p>PPP loan data is published by the federal government. A business that took the PPP loan almost certainly qualifies for the ERC. That's not a guess from a bought list. That's a pattern sitting in government records that nobody was using for outreach.</p>
+        <p>One data point in the public record told me exactly who to contact and why they'd care.</p>
       </div>
     </div>
   </section>
 
-  <!-- TIMELINE -->
-  <section class="timeline">
-    <div class="timeline-inner">
-      <div class="timeline-header">
-        <div>
-          <div class="section-label reveal">Three Years</div>
-          <h2 class="section-heading reveal">The system<br><em>compounded.</em></h2>
-        </div>
-        <p class="section-body reveal">
-          Same person. Same stack. The longer it ran, the sharper the targeting got. Feedback from every call refined what situations converted and which ones didn't.
-        </p>
+  <!-- HOW IT RAN -->
+  <section class="narrative">
+    <div class="narrative-inner">
+      <div>
+        <div class="section-label reveal">How It Ran</div>
+        <h2 class="section-heading reveal">Every email said<br>something <em>true.</em></h2>
       </div>
-      <div class="timeline-items">
-        <div class="timeline-item reveal">
-          <div class="timeline-period">Months 1-3</div>
-          <div class="timeline-title">First conversations</div>
-          <p class="timeline-desc">System built and running. Identified which public records produced the best leads. First replies came within two weeks. Early pipeline started forming from data sources competitors weren't using.</p>
+      <div class="narrative-text reveal">
+        <p>I built email sequences that referenced the business's own situation — you took the PPP loan, you likely qualify for the ERC, here's what you might be leaving on the table. Every first message brought information the recipient didn't have before they opened it.</p>
+        <p>Calls happened after someone showed interest. By the time I picked up the phone, they'd already read something specific about their own business. The conversation started differently than a cold call.</p>
+        <p>I ran the entire operation externally — not as an in-house hire, but as a contractor building and running the system from the outside. $400/month in tools. No team. Three years.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="pull-quote">
+    <div class="pull-quote-inner">
+      <div class="pull-quote-text reveal">
+        <em>12% reply rate</em> when the industry average is 1-3%. Because every message told them something about their own business they didn't already know.
+      </div>
+      <div class="pull-quote-stats reveal">
+        <div class="pull-quote-stat">
+          <div class="pull-quote-num"><span>$5.2</span>M</div>
+          <div class="pull-quote-label">Pipeline</div>
         </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-period">Months 4-12</div>
-          <div class="timeline-title">Pipeline compounds</div>
-          <p class="timeline-desc">Every call refined what worked. Which situations led to meetings, which didn't. Reply rates stabilized at 12%. Pipeline grew consistently without adding headcount or tools.</p>
+        <div class="pull-quote-stat">
+          <div class="pull-quote-num"><span>$1</span>M</div>
+          <div class="pull-quote-label">Closed-Won</div>
         </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-period">Year 2-3</div>
-          <div class="timeline-title">$5.2M pipeline</div>
-          <p class="timeline-desc">The system ran itself. Same process, same person, same $400/month stack. $5.2M in total pipeline. $1M closed-won. No SDR team. No agency. No ramp time for new hires.</p>
+        <div class="pull-quote-stat">
+          <div class="pull-quote-num"><span>3</span></div>
+          <div class="pull-quote-label">Years</div>
+        </div>
+        <div class="pull-quote-stat">
+          <div class="pull-quote-num"><span>$400</span></div>
+          <div class="pull-quote-label">Monthly Tools</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY IT WORKED -->
-  <section class="why">
-    <div class="why-inner">
-      <div class="section-label reveal">Why It Worked</div>
-      <div class="why-text reveal">
-        Every message started with a fact, not a pitch. The prospect read something <em>true about their own company</em> that they didn't expect a stranger to know. That's why they replied.
+  <!-- THE BRIDGE -->
+  <section class="bridge">
+    <div class="bridge-inner">
+      <div class="section-label reveal">What It Proved</div>
+      <h2 class="section-heading reveal">The pattern works.<br>Now it's <em>automated.</em></h2>
+      <div class="bridge-text reveal">
+        <p>BLC proved something simple: when you find the right public record, you know who to call and what to say before you ever pick up the phone. You're not interrupting someone's day with a pitch. You're telling them something about their own situation they didn't realize. That's why they reply.</p>
+        <p>What I did manually for BLC — pulling government records, identifying who qualifies, writing messages that reference their specific situation — is what the system does automatically now. CMS data finds facilities in staffing crises. OSHA records find companies with safety violations. Different industries, same pattern: a public record reveals a situation, and the first message brings value instead of asking for it.</p>
+        <p>The difference is that it used to take hours of research per list. Now it runs weekly, scored and ranked, with talk tracks built from the data. What shows up in your inbox Monday morning is the same work — just automated.</p>
       </div>
-      <p class="why-detail reveal">
-        You know the difference between calling someone cold and calling someone whose situation you already understand. When you know what's happening at their company before you dial, the first 10 seconds sound completely different. The system made sure every call and every email started with something specific and verifiable. Not flattery. Not a guess. A fact from the public record about their business, timed to when it was relevant.
-      </p>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta-strip">
-    <div class="section-label">Same System, Your Market</div>
+    <div class="section-label">Your Market</div>
     <h2 class="cta-headline reveal">
-      This is what we build<br>in the <em>pilot.</em>
+      Same approach.<br>Your <em>industry.</em>
     </h2>
     <p class="cta-sub reveal">
-      Different industry, same approach. Public records, scored leads, messages worth reading. One call to see if the data supports your market.
+      One call to see whether the public data in your market supports this system. I'll pull the numbers before we talk.
     </p>
     <div class="cta-actions reveal">
       <a href="https://calendly.com/lauren-kalmgtm/30min" target="_blank" class="btn-primary">Book a 30-min Call</a>
