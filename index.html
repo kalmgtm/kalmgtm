@@ -23,8 +23,8 @@
       --bg2:     #111110;
       --surface: #171716;
       --border:  #242422;
-      --muted:   #4a4a46;
-      --mid:     #8a8a84;
+      --muted:   #6a6a64;
+      --mid:     #a8a8a0;
       --light:   #c8c8c0;
       --white:   #f0ede6;
       --accent:  #c9a96e;
@@ -539,6 +539,7 @@
       background: var(--surface);
       border-top: 1px solid var(--border);
       padding: 16px 24px;
+      padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
     }
     .mobile-sticky a {
       display: block;
@@ -958,7 +959,7 @@
 
   <!-- MOBILE STICKY CTA -->
   <div class="mobile-sticky">
-    <a href="https://calendly.com/lauren-kalmgtm/30min" target="_blank">See If Your Deals Support a Build</a>
+    <a href="https://calendly.com/lauren-kalmgtm/30min" target="_blank">Check Deal Fit</a>
   </div>
 
   <script>

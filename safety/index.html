@@ -23,8 +23,8 @@
       --bg2:     #111110;
       --surface: #171716;
       --border:  #242422;
-      --muted:   #4a4a46;
-      --mid:     #8a8a84;
+      --muted:   #6a6a64;
+      --mid:     #a8a8a0;
       --light:   #c8c8c0;
       --white:   #f0ede6;
       --accent:  #c9a96e;
@@ -162,7 +162,7 @@
     .footer-links a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--white); }
 
-    .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--surface); border-top: 1px solid var(--border); padding: 16px 24px; }
+    .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--surface); border-top: 1px solid var(--border); padding: 16px 24px; padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
     .mobile-sticky a { display: block; width: 100%; text-align: center; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bg); background: var(--accent); padding: 14px; text-decoration: none; }
 
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
@@ -464,7 +464,7 @@
   </footer>
 
   <div class="mobile-sticky">
-    <a href="https://calendly.com/lauren-kalmgtm/30min" target="_blank">Get a Sample List</a>
+    <a href="https://calendly.com/lauren-kalmgtm/30min" target="_blank">Get Sample List</a>
   </div>
 
   <script>
