@@ -1,0 +1,10 @@
+# Redirect old pages to new sections
+/work/blc       /#about  301!
+/work/blc/      /#about  301!
+/staffing       /        301!
+/staffing/      /        301!
+/safety         /        301!
+/safety/        /        301!
+/work           /        301!
+/work/          /        301!
+/work/*         /        301!
