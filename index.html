@@ -528,6 +528,67 @@
       text-decoration: none;
     }
 
+    /* SERVICE FINE PRINT */
+    .service-fine {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .service-fine p { margin-bottom: 10px; }
+    .service-fine p:last-child { margin-bottom: 0; }
+    .service-fine strong { color: var(--light); font-weight: 500; }
+
+    /* FAQ */
+    .faq-inner { max-width: 720px; margin: 0 auto; }
+    .faq-header { margin-bottom: 56px; }
+    .faq-list { display: flex; flex-direction: column; gap: 2px; }
+    .faq-item { background: var(--surface); overflow: hidden; }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 28px 32px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .faq-question-text {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .faq-icon {
+      font-family: var(--mono);
+      font-size: 18px;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+      line-height: 1;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer-inner {
+      padding: 0 32px 28px;
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.8;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
     /* HONEYPOT */
     .sr-only { position: absolute; overflow: hidden; clip: rect(0,0,0,0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0; }
 
@@ -792,6 +853,11 @@
             <li>Sends from your mailbox, your domain</li>
             <li>Full 90-day performance report</li>
           </ul>
+          <div class="service-fine">
+            <p><strong>What you provide:</strong> a data export from your ATS or CRM, batch approvals (a few minutes per week), and responses to warm replies. One onboarding call to align on voice and tone. That's your time commitment.</p>
+            <p><strong>Guarantee:</strong> if the audit, weekly outreach, and 90-day report aren't delivered as scoped, any remaining work is completed at no additional fee.</p>
+            <p><strong>Costs:</strong> the $7,500 covers everything. No separate fees for tools, sending infrastructure, or data processing.</p>
+          </div>
         </div>
 
         <div class="service-card reveal">
@@ -830,6 +896,67 @@
       <div class="section-label reveal">About</div>
       <div class="reveal" style="font-size: 17px; color: var(--mid); line-height: 1.85; max-width: 680px;">
         <p>Lauren spent three years as the only person running outbound at Bottom Line Concepts, on a $400/month tool budget with no sales team. That produced $5.2M in pipeline and $1M in closed revenue. Kalm GTM does the same thing for staffing owners, starting with the clients they've already won.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="faq-inner">
+      <div class="faq-header">
+        <div class="section-label reveal">Questions</div>
+        <h2 class="section-heading reveal">What you're probably <em>thinking.</em></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span class="faq-question-text">What data do I need to provide?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              An export from Bullhorn or your CRM with client names, job order history, and deal records. Most agencies can pull this in under an hour. If your data lives in spreadsheets, that works too.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span class="faq-question-text">What if my data is messy?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Most staffing CRMs have gaps. The audit accounts for data quality and tells you upfront what's usable and what isn't. Incomplete records are excluded from the recovery estimate, so the numbers you see are conservative.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span class="faq-question-text">What if the pilot doesn't produce results?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              The holdout group answers this objectively. If contacted clients don't reactivate at a higher rate than uncontacted ones, the data will show it. You'll get a clear recommendation: continue, adjust, or stop. No pressure to renew.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span class="faq-question-text">Who owns the data and the work?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              You do. Every template, list, and workflow is yours. If you stop working with Kalm GTM, you keep everything. Your data is deleted from our side within 30 days.
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -936,6 +1063,16 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(function(el) { observer.observe(el); });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+        if (!isOpen) item.classList.add('open');
+      });
+    });
 
     // UTM capture for form hidden fields
     (function() {
