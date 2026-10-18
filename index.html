@@ -13,7 +13,9 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" /></noscript>
   <script defer data-domain="kalmgtm.com" src="https://plausible.io/js/script.js"></script>
 
   <style>
@@ -494,11 +496,11 @@
 
     /* FOOTER */
     footer { border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; }
-    .footer-logo { font-family: var(--serif); font-size: 22px; font-weight: 300; color: var(--muted); letter-spacing: 0.06em; }
+    .footer-logo { font-family: var(--serif); font-size: 22px; font-weight: 300; color: var(--mid); letter-spacing: 0.06em; }
     .footer-logo span { color: var(--accent); }
-    .footer-copy { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--muted); }
+    .footer-copy { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--mid); }
     .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--white); }
 
     /* MOBILE STICKY CTA */
@@ -586,6 +588,8 @@
     <a href="#audit" class="nav-cta">Free Audit</a>
     <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
+
+  <main>
 
   <!-- HERO -->
   <section class="hero">
@@ -885,6 +889,8 @@
       </form>
     </div>
   </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer>
